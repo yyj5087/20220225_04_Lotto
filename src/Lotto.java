@@ -52,6 +52,14 @@ public class Lotto {
 				
 			}
 		}
+//		임시 당첨 번호 선정 -> 당첨 등수 로직 테스트용
+		winNumber[0] = 10;
+		winNumber[1] = 11;
+		winNumber[2] = 20;
+		winNumber[3] = 21;
+		winNumber[4] = 30;
+		winNumber[5] = 31;
+		
 		for(int num : winNumber) {
 			System.out.println(num);
 		}
