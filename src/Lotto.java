@@ -53,16 +53,55 @@ public class Lotto {
 			}
 		}
 //		임시 당첨 번호 선정 -> 당첨 등수 로직 테스트용
-		winNumber[0] = 10;
-		winNumber[1] = 11;
-		winNumber[2] = 20;
-		winNumber[3] = 21;
-		winNumber[4] = 30;
-		winNumber[5] = 31;
+//		winNumber[0] = 10;
+//		winNumber[1] = 11;
+//		winNumber[2] = 20;
+//		winNumber[3] = 21;
+//		winNumber[4] = 30;
+//		winNumber[5] = 31;
+//		랜덤으로 만들어진 당첨번호들을 > 작은 수 ~ 큰 수로 정리
 		
+		for(int i = 0; i < winNumber.length; i++) {
+			for(int j =0; j <winNumber.length-1; j++) {
+				if(winNumber[j]> winNumber[j+1]) {
+					int backUp = winNumber[j];
+					winNumber[j] = winNumber[j+1];
+					winNumber[j+1] = backUp;
+				}
+			}
+		}
+		
+		
+//		정리 된 당첨번호를 확인
+		
+		int corret = 0;
 		for(int num : winNumber) {
 			System.out.println(num);
 		}
 		
+		
+		for(int myNum : myNumbers) {
+			for(int winNum : winNumber) {
+				if(myNum == winNum) {
+					corret++;
+				}
+				
+			}
+		}
+		if(corret == 6) {
+			System.out.println("1등");
+		}
+		else if(corret == 5) {
+			System.out.println("3등");
+		}
+		else if(corret == 4) {
+			System.out.println("4등");
+		}
+		else if(corret == 3) {
+			System.out.println("5등");
+		}
+		else {
+			System.out.println("낙첨");
+		}
 	}
 }
