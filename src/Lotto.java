@@ -7,8 +7,15 @@ public class Lotto {
 		
 		Scanner myScanner = new Scanner(System.in);
 		for(int i =0; i < 6; i++) {
+			while(true) {
 			System.out.print((i+1) +"번째 숫자 : ");
 			int inputNum = myScanner.nextInt();
+			
+			boolean isRangeOK = (1 <= inputNum) &&(inputNum <= 45);
+			if(isRangeOK) {
+				break;
+			}
+			}
 		}
 	}
 }
